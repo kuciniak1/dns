@@ -1,0 +1,13 @@
+$TTL 86400
+@ IN SOA kuciniak.local. root.kuciniak.local. (
+                           2022072752 ;Serial
+                           3600 ;Refresh
+                           1800 ;Retry
+                           604800 ;Expire
+                           86400 ;Minimum TTL
+)
+;Your Name Server Info
+@ IN NS primary.kuciniak.local.
+dns   IN  A    192.168.0.248
+
+248        IN PTR   dns.kuciniak.local.
