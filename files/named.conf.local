@@ -1,12 +1,16 @@
+include "/etc/bind/rndc.key";
+
 zone "kuciniak.local" IN {
         type master;
         file "/var/lib/bind/dynamic/forward.kuciniak.local";
         journal "/var/lib/bind/dynamic/forward.kuciniak.local.jnl";
-        allow-update { 192.168.0.0/24; };
+        allow-query { 192.168.0.0/24; };
+        allow-update { key "rndc-key"; };
 };
 zone "0.168.192.in-addr.arpa" IN {
         type master;
         file "/var/lib/bind/dynamic/reverse.kuciniak.local";
         journal "/var/lib/bind/dynamic/reverse.kuciniak.local.jnl";
-        allow-update { 192.168.0.0/24; };
+        allow-query { 192.168.0.0/24; };
+        allow-update { key "rndc-key"; };
 };

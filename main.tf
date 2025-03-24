@@ -69,6 +69,11 @@ resource "proxmox_lxc" "dns-bind" {
       destination = "/etc/default/named"
     }
 
+    provisioner file {
+      source = "files/rndc.key"
+      destination = "/etc/bind/rndc.key"
+    }
+
     provisioner remote-exec {
       inline = [
         "systemctl restart named"

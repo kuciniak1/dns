@@ -8,5 +8,4 @@ options {
         forwarders { 8.8.8.8; 1.1.1.1;};
         recursion yes;
         dnssec-validation auto;
-        listen-on-v6 { any; };
 };
